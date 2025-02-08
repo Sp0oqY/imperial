@@ -11,4 +11,4 @@ $name = substr(ucfirst(end($name)),0, -4);
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 <link rel="stylesheet" href="./css/<?= $name ?>.css?ver=<?= time() ?>">
 <link rel="stylesheet" href="./assets/css/app.css?ver=<?= time() ?>">
-<title>Imperial Shoes - <?= $name ?></title>
+<title>Imperial Shoes & Clothes- <?= $name ?></title>

@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-require './app/controllers/Db.php';
+require './Db.php';
 require './app/controllers/DataController.php';
 
 Db::connect('127.0.0.1', 'rocnikovy', 'root', '');

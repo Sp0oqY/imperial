@@ -13,7 +13,7 @@ if (session_status() === 1) {
 
     <!--Title / logo-->
     <div class="title">
-        <h2>My Netflix List</h2>
+        <h2>Imperial Shoes & Clothes</h2>
 
         <div class="buttons">
 
@@ -40,11 +40,11 @@ if (session_status() === 1) {
     <!--login / logout buttons -->
     <!--navbar-->
     <ul class="navigation">
-        <li><a id="activeH" class="navBtn" href="/rocnikovy/index">Home</a></li>
-        <li><a id="activeA" class="navBtn" href="/rocnikovy/about">About</a></li>
-        <li><a id="activeP" class="navBtn" href="/rocnikovy/profile">Profile</a></li>
-        <li><a id="activeL" class="navBtn" href="/rocnikovy/list">List</a></li>
-        <li><a id="activeS" class="navBtn" href="/rocnikovy/support">Support</a></li>
-        <li><a id="activeC" class="navBtn" href="/rocnikovy/contact">Contact</a></li>
+        <li><a id="activeH" class="navBtn" href="/imperial/index">Home</a></li>
+        <li><a id="activeA" class="navBtn" href="/imperial/about">About</a></li>
+        <li><a id="activeL" class="navBtn" href="/imperial/list">List</a></li>
+        <li><a id="activeC" class="navBtn" href="/imperial/contact">Reviews</a></li>
+        <li><a id="activeS" class="navBtn" href="/imperial/support">Support</a></li>
+        <li><a id="activeC" class="navBtn" href="/imperial/contact">Contact</a></li>
     </ul>
 </header>
