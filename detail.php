@@ -7,7 +7,7 @@ session_start();
 require './Db.php';
 require './app/controllers/DataController.php';
 
-Db::connect('127.0.0.1', 'rocnikovy', 'root', '');
+Db::connect('sql.endora.cz:3313', 'rocnikovy', 'imperialshoes', 'RLQ7Kroy2aYn1xDo');
 if (isset($_GET['movie'])) {
   $movieid = $_GET['movie'];
   $movie = Db::queryOne("SELECT movies.id,movies.name,movies.description,movies.image,GROUP_CONCAT(genres.name SEPARATOR ' / ') AS allGenres FROM `movies` LEFT JOIN `movie_genres` ON movies.id = movie_genres.movie_id LEFT JOIN `genres` ON movie_genres.genres_skr = genres.skr WHERE movies.id = ${movieid} GROUP BY movies.name;");

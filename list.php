@@ -7,7 +7,7 @@ session_start();
 require './app/controllers/Db.php';
 require './app/controllers/DataController.php';
 
-Db::connect('127.0.0.1', 'rocnikovy', 'root', '');
+Db::connect('sql.endora.cz:3313', 'rocnikovy', 'imperialshoes', 'RLQ7Kroy2aYn1xDo');
 $genres = Db::queryAll("SELECT * FROM `genres`;");
 
 if (isset($_GET['search']) || isset($_GET['category']) || isset($_GET['genre']) || isset($_GET['all'])) {

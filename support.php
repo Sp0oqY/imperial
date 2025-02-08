@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require './app/controllers/Db.php';
 require './app/controllers/DataController.php';
 
-Db::connect('127.0.0.1', 'rocnikovy', 'root', '');
+Db::connect('sql.endora.cz:3313', 'rocnikovy', 'imperialshoes', 'RLQ7Kroy2aYn1xDo');
 
 $support = Db::queryAll("SELECT * FROM `faq`;");
 
