@@ -40,11 +40,11 @@ if (session_status() === 1) {
     <!--login / logout buttons -->
     <!--navbar-->
     <ul class="navigation">
-        <li><a id="activeH" class="navBtn" href="/imperial/index">Home</a></li>
-        <li><a id="activeA" class="navBtn" href="/imperial/about">About</a></li>
-        <li><a id="activeL" class="navBtn" href="/imperial/list">List</a></li>
-        <li><a id="activeC" class="navBtn" href="/imperial/contact">Reviews</a></li>
-        <li><a id="activeS" class="navBtn" href="/imperial/support">Support</a></li>
-        <li><a id="activeC" class="navBtn" href="/imperial/contact">Contact</a></li>
+        <li><a id="activeH" class="navBtn" href="/index.php">Home</a></li>
+        <li><a id="activeA" class="navBtn" href="/about.php">About</a></li>
+        <li><a id="activeL" class="navBtn" href="/list.php">List</a></li>
+        <li><a id="activeC" class="navBtn" href="/contact.php">Reviews</a></li>
+        <li><a id="activeS" class="navBtn" href="/support.php">Support</a></li>
+        <li><a id="activeC" class="navBtn" href="/contact.jsx">Contact</a></li>
     </ul>
 </header>

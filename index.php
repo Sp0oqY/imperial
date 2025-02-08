@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require './Db.php';
 
-Db::connect('localhost', 'rocnikovy', 'root', '');
+Db::connect('sql.endora.cz:3313', 'rocnikovy', 'imperialshoes', 'Sp0oqY159753');
 
 // try 
 // {
