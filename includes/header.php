@@ -45,6 +45,6 @@ if (session_status() === 1) {
         <li><a id="activeL" class="navBtn" href="/list.php">List</a></li>
         <li><a id="activeC" class="navBtn" href="/contact.php">Reviews</a></li>
         <li><a id="activeS" class="navBtn" href="/support.php">Support</a></li>
-        <li><a id="activeC" class="navBtn" href="/contact.jsx">Contact</a></li>
+        <li><a id="activeC" class="navBtn" href="/contact.js">Contact</a></li>
     </ul>
 </header>

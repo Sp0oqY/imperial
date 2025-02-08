@@ -5,7 +5,6 @@ error_reporting(E_ALL);
 session_start();
 
 require './Db.php';
-require './app/controllers/DataController.php';
 
 Db::connect('sql.endora.cz:3313', 'rocnikovy', 'imperialshoes', 'RLQ7Kroy2aYn1xDo');
 if (isset($_GET['movie'])) {

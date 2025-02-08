@@ -3,9 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
-require './app/controllers/Db.php';
-require './app/controllers/DataController.php';
+require './Db.php';
 
 Db::connect('sql.endora.cz:3313', 'rocnikovy', 'imperialshoes', 'RLQ7Kroy2aYn1xDo');
 

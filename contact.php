@@ -5,9 +5,7 @@ error_reporting(E_ALL);
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-require_once './app/controllers/phpmailer/PHPMailer.php';
-require_once './app/controllers/phpmailer/Exception.php';
-require_once './app/controllers/phpmailer/SMTP.php';
+require './Db.php';
 
 $chyba = '';
 
@@ -65,13 +63,13 @@ if(isset($_POST['contact'])){
 <html lang="en">
 
 <head>
-    <?php require_once "./assets/includes/head.php" ?>
+    <?php require_once "./includes/head.php" ?>
 </head>
 
 <body>
 
 <section id="pic">
-<?php require_once "./assets/includes/header.php" ?>
+<?php require_once "./includes/header.php" ?>
 <div class="row">
     <div class="col-12">
         <form class="container" action="./contact" method="POST">
@@ -120,7 +118,7 @@ if(isset($_POST['contact'])){
         </form>
     </div>
   </div>
-  <?php require_once "./assets/includes/footer.php" ?>
+  <?php require_once "./includes/footer.php" ?>
 </section>
 </body>
 

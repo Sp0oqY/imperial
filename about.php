@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <?php require_once "./assets/includes/head.php" ?>
+    <?php require_once "./includes/head.php" ?>
 </head>
 
 <body>
     <section id="pic">
-    <?php require_once "./assets/includes/header.php" ?>
+    <?php require_once "./includes/header.php" ?>
         <div class="row">
             <div class="col-12 content">
                 <div class="main">
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <?php require_once "./assets/includes/footer.php" ?>
+        <?php require_once "./includes/footer.php" ?>
     </section>
 </body>
 </html>

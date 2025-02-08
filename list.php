@@ -4,8 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-require './app/controllers/Db.php';
-require './app/controllers/DataController.php';
+require './Db.php';
 
 Db::connect('sql.endora.cz:3313', 'rocnikovy', 'imperialshoes', 'RLQ7Kroy2aYn1xDo');
 $genres = Db::queryAll("SELECT * FROM `genres`;");
@@ -37,11 +36,11 @@ if (isset($_GET['search']) || isset($_GET['category']) || isset($_GET['genre']) 
 <html lang="en">
 
 <head>
-  <?php require_once "./assets/includes/head.php" ?>
+  <?php require_once "./includes/head.php" ?>
 </head>
 
 <body>
-  <?php require_once "./assets/includes/header.php" ?>
+  <?php require_once "./includes/header.php" ?>
 
   <div class="row">
     <div class="col-12">
@@ -62,7 +61,7 @@ if (isset($_GET['search']) || isset($_GET['category']) || isset($_GET['genre']) 
           </select>
         </form>
 
-        <a href="/rocnikovy/list?all">All</a>
+        <a href="/list?all">All</a>
 
       </section>
     </div>
@@ -78,9 +77,9 @@ if (isset($_GET['search']) || isset($_GET['category']) || isset($_GET['genre']) 
     <?php endforeach ?>
   </div>
 
-  <?php require_once "./assets/includes/footer.php" ?>
+  <?php require_once "./includes/footer.php" ?>
 
-  <script src="./assets/js/list.js?ver=<?= time() ?>"></script>
+  <script src="./js/list.js?ver=<?= time() ?>"></script>
 
 </body>
 
