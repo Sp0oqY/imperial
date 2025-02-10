@@ -62,8 +62,8 @@ export const Contact = () => {
                     <div class="right">
                         <h2>Contact Info</h2>
                         <ul>
-                            <li>Miroslav Kaštier</li>
-                            <li>kastierm45@gmail.com <br /> +421 904 021 045 </li>
+                            <li>MK</li>
+                            <li>mk@gmail.com <br /> +421 000 000 000 </li>
                             <li>Masarykova Univerzita <br /> Fakulta Informatiky</li>
                             <li>Botanická 68A, 602 00 <br /> Královo Pole-Ponava, Brno</li>
                         </ul>
