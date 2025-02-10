@@ -1,162 +1,99 @@
-/*header*/
-.header
-{
-    margin: 0;
+*{
     padding: 0;
-}
-
-.navigation
-{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.navigation li
-{
-    list-style: none;
-    margin: 15px 0 0 0;
-}
-
-.navigation li a
-{
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 1px;
-    padding: 8px 20px;
-}
-
-.navigation li a:hover
-{
-    color: rgb(97, 0, 0);
-    transition: 0.7s;
-}
-
-#activeH:hover
-{
-    color: white;
-    transition: 0.7s;
-}
-
-.buttons{
-    display: flex;
-}
-
-button.SignUp, button.Login
-{   
-    color: white;
-    background-color: rgb(97, 0, 0);
-    border: none;
-    margin: 5px 10px 5px 10px;
-    padding: 5px 15px 5px 15px;
-    border-radius: 5px;
-    background: linear-gradient(blue, red);
-}
-
-button.SignUp:hover, button.Login:hover
-{   
-    background: linear-gradient(red, blue);
-    transition: 2s;
-}
-
-.buttons .settings
-{
-    height: 25px;
-    margin: 0 30px;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
-}
-
-.buttons img
-{
-    margin: 5px 0 0 0;
-    height: 25px;
-}
-
-.title
-{
     margin: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
 
-.title h2
-{
-    font-size: 28px;
-    color: red;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-    letter-spacing: 2px;
-    margin: 5px 0 0 0;
+body{
+    font-family: montserrat;
+}
+nav{
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
 }
 
-/*resposive header*/
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+a.active, a:hover{
+    background:  #1b9bff;
+    transition: 0.5s;
+}
 .checkbtn{
     font-size: 30px;
     color: white;
-    float: left;
+    float: right;
     line-height: 80px;
-    margin-left: 25px;
+    margin-right: 40px;
     cursor: pointer;
     display: none;
 }
-
-#check
-{
+#check{
     display: none;
 }
 
-@media (max-width: 700px)
-{
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
     .checkbtn{
         display: block;
     }
-
     ul{
         position: fixed;
         width: 100%;
+        height: 100vh;
         background: #2c3e50;
         top: 80px;
         left: -100%;
         text-align: center;
         transition: all .5s;
-        flex-direction: column;
     }
-
-    ul li
-    {
+    nav ul li{
         display: block;
-        margin: 50px 0;
-        line-height: 30px;
-        cursor: pointer;
     }
-
-    ul li a{
+    nav ul li a {
         font-size: 20px;
     }
-
+    a:hover, a.active{
+        background: none;
+        color: #0082e6;
+    }
     #check:checked ~ ul{
         left: 0;
     }
-
-    .navigation{
-        display:inline-block;
-    }
 }
-
-/*
-@media only screen and (max-width: 600px)
-
-@media only screen and (min-width: 600px)
-
-@media only screen and (min-width: 768px)
-
-@media only screen and (min-width: 992px)
-
-@media only screen and (min-width: 1200px)
-*/
-
-
+section{
+    background: url(https://images.unsplash.com/photo-1519681393784-d120267933ba?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbHBhcGVyJTIwMTkyMHgxMDgwfGVufDB8fDB8fHww) no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+}
