@@ -8,33 +8,7 @@
     <title>Contact Form</title>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            if (window.emailjs) {
-                emailjs.init("jioONWoflXxxBwxuU");
-            }
-        });
-
-        function sendMail(event) {
-            event.preventDefault(); // Zabráni obnoveniu stránky
-
-            let params = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                subject: document.getElementById("subject").value,
-                message: document.getElementById("message").value,
-            };
-
-            emailjs.send("service_kh9uygv", "template_8xgp5xa", params)
-                .then(function (response) {
-                    alert("Email sent successfully!");
-                })
-                .catch(function (error) {
-                    alert("Failed to send email. Please try again.");
-                    console.error("Error:", error);
-                });
-        }
-    </script>
+    <script src="./js/contact.js"></script>
 </head>
 
 <body>

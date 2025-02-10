@@ -9,7 +9,7 @@
         <li><a href="#">O nás</a></li>
         <li><a href="#">Katalóg</a></li>
         <li><a href="#">Recenzie</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li><a href="/imperial/contact.html">Kontakt</a></li>
     </ul>
 </nav>
 <section>
