@@ -9,9 +9,11 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="./js/contact.js"></script>
+    <?php require_once "./includes/head.php" ?>
 </head>
 
 <body>
+    <?php require_once "./includes/header.php" ?>
     <form class="container" onsubmit="sendMail(event)">
         <div class="contact-box">
             <div class="left">
@@ -51,6 +53,7 @@
             </div>
         </div>
     </form>
+    <?php require_once "./includes/footer.php" ?>
 </body>
 
 </html>
