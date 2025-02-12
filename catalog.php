@@ -33,6 +33,27 @@ Db::connect('localhost', 'imperial', 'root', '');
 // }
 
 $products = Db::queryAll("SELECT id, name, image, cost from catalog");
+
+$count = Db::query("SELECT * FROM `catalog`");
+if ($count % 12 == 0) {
+    $count = $count / 12;
+} else {
+    $count = ($count / 12) + 1;
+}
+
+if (isset($_GET['category']) || isset($_GET['color'])) {
+  switch ($_GET) {
+      case !empty($_GET['category']):
+          $category = $_GET['category'];
+          $products = Db::queryAll("SELECT products.id, products.name, image, cost, description, category.category, color from products left join category on category.id = products.category_id left join colors on colors.id = products.color_id WHERE `category_id` = '${category}'");
+          break;
+
+      case !empty($_GET['color']):
+          $color = $_GET['color'];
+          $products = Db::queryAll("SELECT products.id, products.name, image, cost, description, category.category, color from products left join category on category.id = products.category_id left join colors on colors.id = products.color_id WHERE `color_id` = '${color}'");
+          break;
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,19 +92,59 @@ $products = Db::queryAll("SELECT id, name, image, cost from catalog");
   </div> -->
 
   <section>
+    
+  <div class="small-container">
+        <h2>Produkty</h2>
+        <div class="row row-2">
+            <select>
+                <option>Všetky produkty</option>
+                <option>Najvyššia cena</option>
+                <option>Najnižšia cena</option>
+                <option>Kategória</option>
+                <option>Farba</option>
+            </select>
 
-  
+            <form action="">
+                <select name="category" onchange="this.form.submit()">
+                    <option default selected disabled>Category</option>
+                    <?php foreach ($category as $item) : ?>
+                        <option value="<?= $item['id'] ?>"><?= $item['category'] ?></option>
+                    <?php endforeach ?>
+                </select>
+            </form>
+
+            <form action="">
+                <select name="color" onchange="this.form.submit()">
+                    <option default selected disabled>Colors</option>
+                    <?php foreach ($color as $item) : ?>
+                        <option value="<?= $item['id'] ?>"><?= $item['color'] ?></option>
+                    <?php endforeach ?>
+                </select>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="products">
+                <?php foreach ($products as $product) : ?>
+                    <div class="product" data-product="<?= $product['id'] ?>" method="POST">
+                        <img class="product-img" src="<?= $product['image'] ?>">
+                        <p class="product-title"><?= $product['name'] ?></p>
+                        <p class="product-title"><?= $product['cost'] ?> €</p>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
 
 
-  <!--Products-->
-  <div class="movies">
-    <?php foreach ($products as $product) : ?>
-      <div class="movie" data-movie="<?= $product['id'] ?>" method="POST">
-        <img class="movie-img" src="<?= $product['image'] ?>" alt="">
-        <h3 class="movie-title"><?= $product['name'] ?></h3>
-      </div>
-    <?php endforeach ?>
-  </div>
+
+        <!-- <div class="page-btn">
+            <?php for ($i = 1; $i <= $count; $i++) : ?>
+                <a href="/imperial/catalog.php?page=<?= $i ?>"><span><?= $i ?></span></a>
+            <?php endfor; ?>
+        </div> -->
+
+    </div>
+
   </section>
 
 
