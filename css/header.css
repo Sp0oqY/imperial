@@ -9,16 +9,23 @@
 body{
     font-family: montserrat;
 }
+
 nav{
-    background: #0082e6;
+    
     height: 80px;
     width: 100%;
 }
-label.logo{
+a img{
+    max-width: 70px;
+    max-height: 70px;
+    float: left;
+    margin: 5px;
+}
+label.title{
     color: white;
-    font-size: 35px;
+    font-size: 25px;
     line-height: 80px;
-    padding: 0 100px;
+    padding: 0 10px;
     font-weight: bold;
 }
 nav ul{
@@ -29,11 +36,10 @@ nav ul{
 nav ul li{
     display: inline-block;
     line-height: 80px;
-    margin: 0 5px;
 }
 nav ul li a{
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
@@ -55,16 +61,11 @@ a.active, a:hover{
     display: none;
 }
 
-@media (max-width: 952px){
-    label.logo{
-        font-size: 30px;
-        padding-left: 50px;
+@media (max-width: 970px){
+    .logo{
+        text-align: center;
+        align-items: center;
     }
-    nav ul li a{
-        font-size: 16px;
-    }
-}
-@media (max-width: 858px){
     .checkbtn{
         display: block;
     }
@@ -91,9 +92,4 @@ a.active, a:hover{
     #check:checked ~ ul{
         left: 0;
     }
-}
-section{
-    background: url(https://images.unsplash.com/photo-1519681393784-d120267933ba?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbHBhcGVyJTIwMTkyMHgxMDgwfGVufDB8fDB8fHww) no-repeat;
-    background-size: cover;
-    height: calc(100vh - 80px);
 }
