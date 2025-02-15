@@ -11,5 +11,6 @@ $name = substr(ucfirst(end($name)),0, -4);
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 <link rel="stylesheet" href="./css/<?= $name ?>.css?ver=<?= time() ?>">
 <link rel="stylesheet" href="./css/app.css?ver=<?= time() ?>">
+<link rel="website icon" type="png" href="./img/logo_png.png">
 <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 <title>Imperial Shoes & Clothes</title>
