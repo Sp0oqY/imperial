@@ -694,5 +694,87 @@ select:focus {
   text-align: center;
 }
 
+/*admin page*/
+.adminForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-form {
+  border-top: 5px solid #ff523b;
+  color: black;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 30px 60px 0 rgba(68, 114, 170, 0.4);
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.admin h1 {
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.title h1::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ff523b;
+  margin: 8px auto;
+}
+
+.admin label {
+  float: left;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.admin input, .admin select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: solid 2px black;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+select {
+  background-color: #f0f0f0;
+  color: #333;
+  appearance: none;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #ff523b;
+}
+
+#btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff523b;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 25px;
+  border-radius: 5px;
+}
+
+#btn:hover {
+  background-color: gray;
+}
+
 
 
