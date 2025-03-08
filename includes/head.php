@@ -14,4 +14,4 @@ $name = substr(ucfirst(end($name)),0, -4);
 <link rel="website icon" type="png" href="./img/logo_png.png">
 <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./css/swiper-bundle.min.css">
-<title>Imperial Shoes & Clothes</title>
+<title>Imperial Shoes</title>

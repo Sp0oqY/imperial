@@ -13,6 +13,6 @@
 
     <div class="logo">
         <a href="/imperial/index.php"><img src="./img/logo_png.png" alt=""></a>
-        <label class="title">Imperial Shoes & Clothes</label>
+        <label class="title">Imperial Shoes</label>
     </div>
 </nav>
