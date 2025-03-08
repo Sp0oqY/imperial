@@ -309,7 +309,7 @@ h2 {
 }
 
 .btn {
-  
+
   padding: 0.5rem 1rem;
   background: linear-gradient(135deg, blue, red);
   color: #fff;
@@ -462,7 +462,6 @@ input:focus {
 }
 
 /*Reviews*/
-
 .review-form {
   min-height: calc(100vh - 80px);
   display: flex;
@@ -485,6 +484,11 @@ input:focus {
 .card {
   border-radius: 25px;
   background-color: #fff;
+}
+
+.card-content {
+  height: 160px;
+  width: 330px;
 }
 
 .image-content,
@@ -548,28 +552,14 @@ input:focus {
   font-size: 18px;
   font-weight: 500;
   color: black;
+  margin: 15px 0;
+  padding: 0;
 }
 
 .description {
   font-size: 14px;
   color: gray;
   text-align: center;
-}
-
-.button {
-  border: none;
-  font-size: 16px;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, blue, red);
-  margin: 14px;
-  cursor: pointer;
-  transition: all 0.3 ease;
-}
-
-.button:hover {
-  transform: scale(1.1);
 }
 
 .swiper-navBtn {
@@ -603,6 +593,39 @@ input:focus {
   background-color: red;
 }
 
+.custom-next,
+.custom-prev {
+  color: blue;
+  transition: color 0.3s ease;
+}
+
+.custom-next:hover,
+.custom-prev:hover {
+  color: red;
+}
+
+.custom-next::before,
+.custom-prev::after {
+  font-size: 40px;
+}
+
+.custom-next {
+  right: 10px;
+}
+
+.custom-prev {
+  left: 10px;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  background-color: blue;
+  opacity: 1;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: red;
+}
+
 @media screen and (max-width: 768px) {
   .slide-content {
     margin: 0 10px;
@@ -610,6 +633,10 @@ input:focus {
 
   .swiper-navBtn {
     display: none;
+  }
+  .card-content {
+    height: auto;
+    width: auto;
   }
 }
 
@@ -634,6 +661,7 @@ select {
   cursor: pointer;
   /*appearance: none;*/
 }
+
 .price-slider {
   width: 100%;
   max-width: 400px;
