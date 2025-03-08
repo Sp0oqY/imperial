@@ -212,7 +212,8 @@ ul {
 /*contact*/
 .container {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -220,24 +221,31 @@ ul {
   padding: 20px 100px;
 }
 
-.contact-box {
-  max-width: 850px;
+.support {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #fff;
+  
   box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
-}
-
-.left,
-.right {
-  height: 100%;
   padding: 25px 40px;
+  margin: 10px;
+
 }
 
-.left p {
+.contact-box {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+  padding: 25px 40px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.contact-box p {
   display: flex;
   justify-content: left;
   font-weight: bold;
@@ -272,6 +280,7 @@ h2 {
 
 .area {
   min-height: 150px;
+  resize: none;
 }
 
 .right ul {
@@ -323,6 +332,103 @@ h2 {
 .btn:hover {
   scale: 1.05;
   color: #fff;
+}
+
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  max-height: 520px;
+  margin: 2rem auto;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.accordion-item {
+  background-color: #fff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.accordion-item-header2 {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.accordion-item-header2 a {
+  color: red;
+}
+
+.accordion-item-header2 a:hover {
+  text-decoration: none;
+}
+
+.accordion-item-header {
+  width: 100%;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.accordion-item-header p,
+.accordion-item-header2 p {
+  margin: 0;
+  text-align: center;
+}
+
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+.accordion-item-body-content p {
+  text-align: center;
 }
 
 @media screen and (max-width: 880px) {
@@ -634,6 +740,7 @@ input:focus {
   .swiper-navBtn {
     display: none;
   }
+
   .card-content {
     height: auto;
     width: auto;
