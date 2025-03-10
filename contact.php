@@ -1,3 +1,18 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+session_start();
+
+require './Db.php';
+
+//Db::connect('sql.endora.cz:3313', 'imperial', 'imperialshoes', 'RLQ7Kroy2aYn1xDo');
+Db::connect('localhost', 'imperial', 'root', '');
+
+$questions = Db::queryAll("SELECT * FROM faq");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,15 +24,15 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="./js/contact.js"></script>
-    
+
     <?php require_once "./includes/head.php" ?>
 </head>
 
 <body>
     <?php require_once "./includes/header.php" ?>
     <section>
-        <form class="container" onsubmit="sendMail(event)">
-            <div class="contact-box">
+        <div class="container">
+            <form class="contact-box" onsubmit="sendMail(event)">
                 <h2>Kontaktný Formulár</h2>
                 <p>Meno</p>
                 <input type="text" id="name" class="field" placeholder="Zadajte svoje meno" required />
@@ -30,7 +45,7 @@
 
                 <button class="btn" type="submit">Odoslať</button>
 
-                <div class="network">
+                <!-- <div class="network">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/profile.php?id=100008982675113">
                         <img class="net fb" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Facebook" />
                     </a>
@@ -40,27 +55,29 @@
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/miroslav-ka%C5%A1tier-788a92310/">
                         <img class="net" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" alt="LinkedIn" />
                     </a>
-                </div>
-            </div>
+                </div> -->
+            </form>
             <div class="support">
                 <h1>FREQUENTLY ASKED QUESTIONS</h1>
                 <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-item-header">
-                            <p>Otázka</p>
-                        </div>
-                        <div class="accordion-item-body">
-                            <div class="accordion-item-body-content">
-                                <p>Odpoveď</p>
+                    <?php foreach ($questions as $question): ?>
+                        <div class="accordion-item">
+                            <div class="accordion-item-header">
+                                <p><?= $question['question'] ?></p>
+                            </div>
+                            <div class="accordion-item-body">
+                                <div class="accordion-item-body-content">
+                                    <p><?= $question['answer'] ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
             </div>
-        </form>
+        </div>
     </section>
 
-    <?php require_once "./includes/footer.php" ?>
+    <!-- <?php require_once "./includes/footer.php" ?> -->
     <script src="./js/support.js"></script>
 </body>
 

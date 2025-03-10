@@ -50,9 +50,8 @@ $reviews = Db::queryAll("SELECT id, nickname, text from reviews");
             <div class="swiper-button-prev swiper-navBtn custom-prev"></div>
             <div class="swiper-pagination custom-pagination"></div>
         </div>
-
-        <?php require_once "./includes/footer.php" ?>
     </section>
+    <?php require_once "./includes/footer.php" ?>
 </body>
 <script src="js/swiper-bundle.min.js"></script>
 
