@@ -5,6 +5,7 @@
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1519681393784-d120267933ba?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbHBhcGVyJTIwMTkyMHgxMDgwfGVufDB8fDB8fHww) no-repeat;
   background-size: cover;
+  backdrop-filter: blur(10px);
 }
 
 * {
@@ -160,7 +161,6 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -257,7 +257,7 @@ h2 {
 .btn {
 
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, blue, red);
+  background: linear-gradient(90deg, #6500b0, #ff006a);
   color: #fff;
   border-radius: 5px;
   border: none;

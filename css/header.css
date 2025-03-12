@@ -21,15 +21,26 @@ header {
 }
 
 nav {
-
     height: 80px;
     width: 100%;
+    background-color: #0a0a0a;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
 }
 
 a img {
-    max-width: 70px;
-    max-height: 70px;
-
+    max-width: 65px;
+    max-height: 65px;
     margin: 5px;
 }
 
@@ -41,11 +52,6 @@ label.title {
     font-weight: bold;
 }
 
-nav ul {
-    float: right;
-    margin-right: 20px;
-}
-
 nav ul li {
     display: inline-block;
     line-height: 80px;
@@ -54,19 +60,23 @@ nav ul li {
 nav ul li a {
     color: white;
     font-size: 15px;
-    padding: 7px 13px;
+    padding: 10px 20px;
     border-radius: 3px;
     text-transform: uppercase;
 }
 
 a.active {
-    background: linear-gradient(135deg, blue, red);
+    background: linear-gradient(90deg, #6500b0, #ff006a);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
 }
 
-a:hover {
-    background: linear-gradient(135deg, blue, red);
+.navHover:hover {
+    background: linear-gradient(90deg, #6500b0, #ff006a);
     transition: 0.5s;
-    transform: scale(1.5);
+    padding: 10px 20px;
 }
 
 .checkbtn {
@@ -81,14 +91,6 @@ a:hover {
 
 #check {
     display: none;
-}
-
-.logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 @media (max-width: 970px) {
@@ -118,8 +120,8 @@ a:hover {
 
     a:hover,
     a.active {
-        background: none;
-        color: #0082e6;
+        background: linear-gradient(90deg, #6500b0, #ff006a);
+        color: white;
     }
 
     #check:checked~ul {
