@@ -6,7 +6,7 @@ body {
   background-color: black;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1519681393784-d120267933ba?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbHBhcGVyJTIwMTkyMHgxMDgwfGVufDB8fDB8fHww) no-repeat;
   background-size: cover;
-  backdrop-filter: blur(10px);
+  
 }
 
 * {
@@ -115,55 +115,12 @@ body {
   height: 450px;
 }
 
-.footer {
-  background-color: #222;
-  color: white;
-  padding: 40px 20px;
-  width: 100%;
-  text-align: center;
-}
-.container-footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
-.footer-section h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  border-bottom: 2px solid #f39c12;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-section ul li {
-  margin: 5px 0;
-}
-.footer-section ul li a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.footer-section ul li a:hover {
-  color: #f39c12;
-}
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #444;
-}
-
 /*contact*/
 .container {
   position: relative;
-  display: flex; /* Zmena na flexbox pre lepšie centrovanie */
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   min-height: calc(100vh - 80px);
 }
 
@@ -171,8 +128,6 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 100px;
-  max-width: 80%;
-  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -180,13 +135,23 @@ body {
 .support, .contact-box {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
   box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
   padding: 25px 40px;
   border-radius: 10px;
   border: 2px solid #ff006a;
-  height: 100%;
+  backdrop-filter: blur(10px);
+  height: 600px;
+}
+
+.contact-box h2::after, .support h2:after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 3px;
+  background: #ff006a;
+  margin: 8px auto;
 }
 
 .contact-box p {
@@ -206,7 +171,7 @@ h2 {
 }
 
 .field {
-  width: 100%;
+  width: 60%;
   border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
   outline: none;
@@ -239,8 +204,10 @@ h2 {
   border: none;
   outline: none;
   cursor: pointer;
-  transition: .5s;
-  max-width: 70%;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  max-width: 50%;
 }
 
 .btn:hover {
@@ -248,32 +215,11 @@ h2 {
   color: #fff;
 }
 
-/* .network {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.network a img {
-  height: 60px;
-  width: 60px;
-  margin-top: 60px;
-  border-radius: 12px;
-  box-shadow: #000000 0px 0px 10px 0px;
-} */
-
 /*support*/
-
 .accordion {
   
-  max-height: 90%;
   padding: 10px;
   overflow-y: scroll;
-}
-
-::-webkit-scrollbar {
-  width: 0px;
 }
 
 .accordion-item {
@@ -283,25 +229,6 @@ h2 {
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
   text-align: center;
-}
-
-.accordion-item-header2 {
-  padding: 0.5rem 3rem 0.5rem 1rem;
-  min-height: 3.5rem;
-  line-height: 1.25rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  position: relative;
-  text-align: center;
-}
-
-.accordion-item-header2 a {
-  color: red;
-}
-
-.accordion-item-header2 a:hover {
-  text-decoration: none;
 }
 
 .accordion-item-header {
@@ -318,8 +245,7 @@ h2 {
   text-align: center;
 }
 
-.accordion-item-header p,
-.accordion-item-header2 p {
+.accordion-item-header p{
   margin: 0;
   text-align: center;
 }
@@ -352,22 +278,29 @@ h2 {
   text-align: center;
 }
 
-@media screen and (max-width: 880px) {
-  .contact-box {
-    grid-template-columns: 1fr;
-  }
+@media screen and (max-width: 530px) {
 
-  .right {
-    height: 100%;
+  .field { 
+    width: 80%;
   }
+}
 
-  .network {
-    max-width: 70%;
+@media screen and (max-width: 1200px) {
+
+  .wrapper { 
+    grid-template-columns: repeat(1, 1fr);
+    padding: 25px 40px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+
+  .wrapper { 
+    padding: 25px 40px;
   }
 }
 
 /*All products*/
-
 .page-btn {
   margin: 0 auto 80px;
 }
@@ -669,7 +602,6 @@ input:focus {
 }
 
 /*Catalog*/
-
 .filter-container {
   display: flex;
   flex-direction: row;
@@ -690,65 +622,45 @@ select {
   /*appearance: none;*/
 }
 
-.price-slider {
+/* footer */
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 40px 20px;
   width: 100%;
-  max-width: 400px;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
-
-.price-inputs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+.footer-section h3 {
   margin-bottom: 10px;
-}
-
-.price-inputs input {
-  width: 80px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  background: #f2f2f2;
-  padding: 10px;
-  border-radius: 10px;
-  color: gray;
-}
-
-.price-inputs span {
-  margin: 0 10px;
   font-size: 18px;
+  border-bottom: 2px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
 }
-
-.slider-container {
-  position: relative;
-  width: 100%;
+.footer-section ul {
+  list-style: none;
+  padding: 0;
 }
-
-input[type="range"] {
-  -webkit-appearance: none;
-  width: 100%;
-  position: absolute;
-  background: transparent;
-  pointer-events: none;
+.footer-section ul li {
+  margin: 5px 0;
 }
-
-input[type="range"]::-webkit-slider-runnable-track {
-  height: 5px;
-  background: lightgreen;
-  border-radius: 5px;
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
 }
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: 2px solid #ddd;
-  border-radius: 50%;
-  position: relative;
-  margin-top: -8px;
-  pointer-events: all;
-  cursor: pointer;
+.footer-section ul li a:hover {
+  color: #f39c12;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #444;
 }
