@@ -13,5 +13,6 @@ $name = substr(ucfirst(end($name)),0, -4);
 <link rel="stylesheet" href="./css/app.css?ver=<?= time() ?>">
 <link rel="website icon" type="png" href="./img/logo_png.png">
 <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/8a3237e1e4.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 <title>Imperial Shoes</title>
