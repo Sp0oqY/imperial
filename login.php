@@ -5,10 +5,7 @@ error_reporting(E_ALL);
 session_start();
 require './Db.php';
 
-if (isset($_SESSION['id'])) {
-    header('Location: /admin.php');
-    exit();
-}
+
 
 Db::connect('localhost', 'imperial', 'root', '');
 $chyba = '';

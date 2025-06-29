@@ -12,6 +12,10 @@ $name = substr(ucfirst(end($name)),0, -4);
 <link rel="stylesheet" href="./css/<?= $name ?>.css?ver=<?= time() ?>">
 <link rel="stylesheet" href="./css/app.css?ver=<?= time() ?>">
 <link rel="website icon" type="png" href="./img/logo_png.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/8a3237e1e4.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./css/swiper-bundle.min.css">

@@ -8,11 +8,7 @@ if (session_status() === 1) {
     session_start();
 }
 
-if (!isset($_SESSION['id'])) 
-{
-    header('Location: /imperial/admin.php');
-    exit();
-}
+
 
 require './Db.php';
 
