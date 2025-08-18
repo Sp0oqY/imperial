@@ -66,7 +66,8 @@ $questions = Db::queryAll("SELECT * FROM faq");
 
     <?php require_once "./includes/footer.php" ?> 
     <script src="./js/support.js"></script>
-    <script src="./js/contact.js"></script>
+    <script type="text/javascript" src="./js/contact.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 
 </html>
