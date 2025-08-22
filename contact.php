@@ -26,48 +26,66 @@ $questions = Db::queryAll("SELECT * FROM faq");
 
 <body>
     <?php require_once "./includes/header.php" ?>
-    <section>
-        <div class="container">
-            <div class="wrapper">
-                <form class="contact-box" >
-                    <h2>KONTAKTNÝ FORMULÁR</h2>
-                    <p>Meno</p>
-                    <input type="text" id="name" class="field" placeholder="Zadajte svoje meno" required />
-                    <p>E-mail</p>
-                    <input type="email" id="email" class="field" placeholder="Zadajte svoj e-mail" required />
-                    <p>Predmet</p>
-                    <input type="text" id="subject" class="field" placeholder="Zadajte predmet" required />
-                    <p>Správa</p>
-                    <textarea id="message" class="field area" placeholder="Zadajte správu" required></textarea>
+    <div class="modal">
+                <div class="modal-content">
+                    <img src="/img/tick_icon.png">
+                    <h2>Thank You!</h2>
+                    <p>Your message has been sent successfully :)</p>
+                    <button class="btn" onclick="closeModal()">OK</button>
+                </div>
+            </div>
 
-                    <button class="btn" onsubmit="sendMail(event)" type="submit">ODOSLAŤ</button>
-                </form>
+            <div class="support-container">
+                <div class="wrapper">
+                    <form id="contact-form" class="contact-box">
+                        <h3>Contact Form</h3>
 
-                <div class="support">
-                    <h2>NAJČASTEJŠIE OTÁZKY</h2>
-                    <div class="accordion">
-                        <?php foreach ($questions as $question) : ?>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="name" name="name"
+                                placeholder="Enter your username" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Enter your email" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject"
+                                placeholder="Enter a subject" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control area"
+                                placeholder="Enter a message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-form">Send a message</button>
+                    </form>
+
+                    <div class="support">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="accordion">
                             <div class="accordion-item">
                                 <div class="accordion-item-header">
-                                    <p><?= $question['question'] ?></p>
+                                    <p>Question</p>
                                 </div>
                                 <div class="accordion-item-body">
                                     <div class="accordion-item-body-content">
-                                        <p><?= $question['answer'] ?></p>
+                                        <p>Answer</p>
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
     <?php require_once "./includes/footer.php" ?> 
-    <script src="./js/support.js"></script>
-    <script type="text/javascript" src="./js/contact.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 
 </html>

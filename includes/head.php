@@ -20,3 +20,12 @@ $name = substr(ucfirst(end($name)),0, -4);
 <script src="https://kit.fontawesome.com/8a3237e1e4.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 <title>Imperial Shoes</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init('ti3nJ8v-dTpiZ997y');
+  })();
+</script>

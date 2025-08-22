@@ -1,28 +1,44 @@
+//FAQ
+const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
-document.addEventListener("DOMContentLoaded", function ()
-{
-    if (window.emailjs) 
-    {
-        emailjs.init("jioONWoflXxxBwxuU");
-    }
+accordionItemHeaders.forEach(accordionItemHeader => {
+    accordionItemHeader.addEventListener("click", event => {
+        accordionItemHeader.classList.toggle("active");
+        const accordionItemBody = accordionItemHeader.nextElementSibling;
+        if (accordionItemHeader.classList.contains("active")) {
+            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+        } else {
+            accordionItemBody.style.maxHeight = 0;
+        }
+    });
 });
 
-function sendMail(event) {
+//Email
+const form = document.getElementById('contact-form');
+const modal = document.querySelector('.modal');
+const modalMessageElement = document.querySelector('.modal-content p');
 
-    let params = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value,
-    };
-
-    emailjs.send("service_kh9uygv", "template_8xgp5xa", params)
-        .then(function (response) {
-            alert("Email sent successfully!");
-        })
-        .catch(function (error) {
-            event.preventDefault();
-            alert("Failed to send email. Please try again.");
-            console.error("Error:", error);
-        });
+function showModal(message) {
+    if (modal && modalMessageElement) {
+        modalMessageElement.textContent = message;
+        modal.classList.add('show');
+    }
 }
+
+function closeModal() {
+    if (modal) {
+        modal.classList.remove('show');
+    }
+}
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_dw9fv22', 'template_pw0zf1n', this)
+        .then(() => {
+            showModal("Your message has been sent successfully :)");
+            form.reset();
+        }, (error) => {
+            showModal("FAILED... " + error.text);
+        });
+});

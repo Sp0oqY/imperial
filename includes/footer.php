@@ -36,3 +36,7 @@
 <script src="./assets/js/jquery-3.6.0.min.js"></script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
 
+<script src="./js/support.js"></script>
+    <script type="text/javascript" src="./js/contact.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
